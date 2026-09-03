@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Tema principal */
+@theme {
+  --color-cream: #faf5ec;
+  --color-sand: #e8d9c0;
+  --color-terracotta: #c4622d; 
+  --color-olive: #3d3d2a;
+  --color-offwhite: #f9f6f0;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+/* Reset base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-olive);
+  /* Suaviza renderizado en pantallas de alta densidad*/
+  -webkit-font-smoothing: antialiased;
+  /* Evitamos scroll horizontal en la página */
+  overflow-x: hidden;
+}
+

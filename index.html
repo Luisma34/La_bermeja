@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpg" href="/logo-bermeja.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO básico -->
+    <meta name="description" content="La Bermeja — Experiencias gastronómicas con raíces canarias. Eventos privados en Gran Canaria." />
+
+    <!-- Google Fonts: Playfair Display (títulos) + DM Sans (cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>La Bermeja — Raíces Canarias</title>
+
+    <!--
+      WIDGET DE ACCESIBILIDAD — UserWay
+      Cargamos el script pero ocultamos el botón flotante automático.
+      El widget se abre desde el botón de la página /accesibilidad.
+    -->
+    <script>
+      (function(d) {
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "DErNOe8OdN");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+      })(document);
+    </script>
+
+    <!-- Oculta el botón flotante de UserWay sin desactivar el widget -->
+    <style>
+      #userwayAccessibilityIcon { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
