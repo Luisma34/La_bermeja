@@ -3,51 +3,30 @@
 // DESKTOP: grid 4 columnas, descripción aparece en hover.
 // Cuando tengas fotos reales: añade image: "/images/..." a cada evento y descomenta el <img>.
 
-import { motion } from 'framer-motion'
-
-const EVENTS = [
-  {
-    id: 1,
-    type:        'Boda privada',
-    description: 'Fusión canaria-italiana en finca propia. Escaldón, gofio y pulpo a la brasa.',
-    location:    'Gran Canaria',
-    // image: '/images/boda-01.jpg',
-  },
-  {
-    id: 2,
-    type:        'Celebración familiar',
-    description: 'Mesa de productos de la isla para 40 personas. Historia de tres generaciones en cada plato.',
-    location:    'Gran Canaria',
-    // image: '/images/familiar-01.jpg',
-  },
-  {
-    id: 3,
-    type:        'Evento privado',
-    description: 'Experiencia íntima para 12 personas. Menú degustación con ingredientes de productores locales.',
-    location:    'Gran Canaria',
-    // image: '/images/privado-01.jpg',
-  },
-  {
-    id: 4,
-    type:        'Cumpleaños especial',
-    description: 'Una historia de vida traducida en siete tiempos. Sabores de infancia con técnica actual.',
-    location:    'Gran Canaria',
-    // image: '/images/cumple-01.jpg',
-  },
-]
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { supabase } from "../library/supabaseClient";
 
 const PLACEHOLDER_COLORS = [
-  'bg-olive',
-  'bg-terracotta',
-  'bg-olive/80',
-  'bg-terracotta/70',
-]
+  "bg-olive",
+  "bg-terracotta",
+  "bg-olive/80",
+  "bg-terracotta/70",
+];
 
 function Events() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    supabase
+      .from("events") 
+      .select()
+      .then(({ data }) => setEvents(data));
+  }, []);
+
   return (
     <section id="events" className="bg-cream py-14 md:py-24 px-5">
       <div className="max-w-6xl mx-auto">
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,32 +53,37 @@ function Events() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-body text-olive/60 text-sm sm:text-base mb-10 sm:mb-14 max-w-xl"
         >
-          Próximamente compartiremos aquí las historias que hemos tenido el honor de traducir.
+          Próximamente compartiremos aquí las historias que hemos tenido el
+          honor de traducir.
         </motion.p>
 
         {/* Grid: 2 columnas en móvil, 4 en desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
-          {EVENTS.map((event, index) => (
+          {events.map((event, index) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl sm:rounded-2xl aspect-[3/4]"
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl aspect-3/4"
             >
               {/* Placeholder — reemplazar con <img> cuando haya fotos */}
               {/* <img src={event.image} alt={event.type} className="w-full h-full object-cover" /> */}
-              <div className={`w-full h-full ${PLACEHOLDER_COLORS[index % 4]} flex items-center justify-center`}>
-                <span className="font-display text-offwhite/20 text-4xl sm:text-6xl lg:text-7xl">LB</span>
+              <div
+                className={`w-full h-full ${PLACEHOLDER_COLORS[index % 4]} flex items-center justify-center`}
+              >
+                <span className="font-display text-offwhite/20 text-4xl sm:text-6xl lg:text-7xl">
+                  LB
+                </span>
               </div>
 
               {/* Overlay con info:
                   - En MÓVIL (< sm): descripción siempre visible
                   - En DESKTOP (≥ sm): descripción solo en hover           */}
-              <div className="absolute inset-0 bg-gradient-to-t from-olive/95 via-olive/50 to-transparent flex flex-col justify-end p-3 sm:p-4 lg:p-5">
+              <div className="absolute inset-0 bg-linear-to-t from-olive/95 via-olive/50 to-transparent flex flex-col justify-end p-3 sm:p-4 lg:p-5">
                 <span className="font-body text-terracotta text-[10px] sm:text-xs uppercase tracking-wider mb-1">
-                  {event.type}
+                  {event.title}
                 </span>
 
                 {/* Descripción: siempre visible en móvil, aparece en hover en desktop */}
@@ -116,7 +100,7 @@ function Events() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Events
+export default Events;

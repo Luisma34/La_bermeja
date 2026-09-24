@@ -68,7 +68,7 @@ function HowWeWork() {
               )}
 
               {/* Círculo con número — táctil y visual en móvil */}
-              <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-terracotta/10 border-2 border-terracotta/25 flex items-center justify-center md:w-auto md:h-auto md:rounded-none md:border-none md:bg-transparent md:block">
+              <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-terracotta/10 border-2 border-terracotta/25 flex items-center justify-center md:w-auto md:h-auto md:rounded-none md:border-none md:bg-transparent md:block">
                 <span className="font-display text-terracotta text-base md:text-5xl md:text-terracotta/30 md:leading-none leading-none">
                   {step.number}
                 </span>
