@@ -55,15 +55,15 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/"                        element={<LandingPage />} />
-        <Route path="/admin/login"             element={<AdminLoginPage />} />
-        <Route path="/admin/forgot-password"   element={<ForgotPasswordPage />} />
-        <Route path="/admin/reset-password"    element={<ResetPasswordPage />} />
-        <Route path="/admin"                   element={<AdminPage />} />
-        <Route path="/politica-de-cookies"     element={<CookiesPage />} />
-        <Route path="/politica-de-privacidad"  element={<PrivacyPage />} />
-        <Route path="/terminos-y-condiciones"  element={<TermsPage />} />
-        <Route path="/accesibilidad"           element={<AccessibilityPage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route path="/admin/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/admin/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/politica-de-cookies" element={<CookiesPage />} />
+        <Route path="/politica-de-privacidad" element={<PrivacyPage />} />
+        <Route path="/terminos-y-condiciones" element={<TermsPage />} />
+        <Route path="/accesibilidad" element={<AccessibilityPage />} />
       </Routes>
     </BrowserRouter>
   );

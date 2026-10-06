@@ -2,10 +2,55 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpg" href="/logo-bermeja.jpg" />
+    <!-- Iconos: pestaña del navegador y acceso directo en móvil (iPhone/Android) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO básico -->
-    <meta name="description" content="La Bermeja — Experiencias gastronómicas con raíces canarias. Eventos privados en Gran Canaria." />
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="La Bermeja — Experiencias gastronómicas con raíces canarias. Eventos privados en Gran Canaria."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="La Bermeja" />
+    <meta property="og:locale" content="es_ES" />
+    <meta
+      property="og:title"
+      content="La Bermeja · Experiencias gastronómicas con raíces canarias"
+    />
+    <meta
+      property="og:description"
+      content="No diseñamos menús: traducimos tu historia a través de la cocina canaria. Eventos privados en Gran Canaria."
+    />
+    <!-- El dominio sale de VITE_SITE_URL en .env (Vite lo sustituye al arrancar/compilar) -->
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.jpg" />
+
+    <!-- Ficha del negocio para Google (JSON-LD). El dominio sale de VITE_SITE_URL en .env -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "La Bermeja",
+        "description": "Experiencias gastronómicas con raíces canarias para eventos privados en Gran Canaria.",
+        "url": "%VITE_SITE_URL%/",
+        "logo": "%VITE_SITE_URL%/logo-bermeja.jpg",
+        "image": "%VITE_SITE_URL%/og-image.jpg",
+        "telephone": "+34610368799",
+        "email": "info.labermeja@gmail.com",
+        "areaServed": {
+          "@type": "Place",
+          "name": "Gran Canaria"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Las Palmas",
+          "addressCountry": "ES"
+        },
+        "sameAs": ["https://www.instagram.com/la_bermeja_/"]
+      }
+    </script>
 
     <!-- Google Fonts: Playfair Display (títulos) + DM Sans (cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,15 +60,17 @@
       rel="stylesheet"
     />
 
-    <title>La Bermeja — Raíces Canarias</title>
-
+    <title>
+      La Bermeja · Experiencias gastronómicas con raíces canarias en Gran
+      Canaria
+    </title>
     <!--
       WIDGET DE ACCESIBILIDAD — UserWay
       Cargamos el script pero ocultamos el botón flotante automático.
       El widget se abre desde el botón de la página /accesibilidad.
     -->
     <script>
-      (function(d) {
+      (function (d) {
         var s = d.createElement("script");
         s.setAttribute("data-account", "DErNOe8OdN");
         s.setAttribute("src", "https://cdn.userway.org/widget.js");
@@ -33,7 +80,9 @@
 
     <!-- Oculta el botón flotante de UserWay sin desactivar el widget -->
     <style>
-      #userwayAccessibilityIcon { display: none !important; }
+      #userwayAccessibilityIcon {
+        display: none !important;
+      }
     </style>
   </head>
   <body>

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# /admin NO se bloquea aquí a propósito: sus páginas llevan <meta name="robots" content="noindex">
+# y Google solo puede leer ese noindex si tiene permiso para entrar.
+
+# TODO: sustituir TU-DOMINIO.com por el dominio real cuando se publique la web
+Sitemap: https://TU-DOMINIO.com/sitemap.xml

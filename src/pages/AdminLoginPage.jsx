@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../library/supabaseClient.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function AdminLoginPage() {
   const [email, setEmail] = useState("");
@@ -9,10 +9,6 @@ function AdminLoginPage() {
   const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
-
-  const handleForgotPassword = async () => {
-    navigate("/admin/forgot-password");
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -55,6 +51,8 @@ function AdminLoginPage() {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-zinc-950 text-white px-4">
+      {/* Que Google no indexe las páginas del panel (React 19 sube esta etiqueta al <head>) */}
+      <meta name="robots" content="noindex, nofollow" />
       <div className="rounded-2xl p-5 sm:p-8 bg-zinc-900 border border-white/10 w-full max-w-xs sm:max-w-sm">
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
           <h1 className="text-xl sm:text-2xl text-center">Panel Admin</h1>
@@ -120,13 +118,12 @@ function AdminLoginPage() {
           </button>
 
           {/* Olvidaste contraseña */}
-          <button
-            type="button"
-            onClick={handleForgotPassword}
-            className="text-xs sm:text-sm text-zinc-400 underline hover:text-white cursor-pointer"
+          <Link
+            to="/admin/forgot-password"
+            className="text-center text-xs sm:text-sm text-zinc-400 underline hover:text-white"
           >
             ¿Olvidaste tu contraseña?
-          </button>
+          </Link>
         </form>
       </div>
     </div>

@@ -7,6 +7,7 @@ import LegalLayout from '../components/LegalLayout'
 function TermsPage() {
   return (
     <LegalLayout title="Términos y Condiciones">
+      
 
       <p>
         <strong>Última actualización:</strong> agosto de 2026

@@ -40,11 +40,11 @@ function ResetPasswordPage() {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-zinc-950 text-white px-4">
+      {/* Que Google no indexe las páginas del panel (React 19 sube esta etiqueta al <head>) */}
+      <meta name="robots" content="noindex, nofollow" />
       <div className="rounded-2xl p-5 sm:p-8 bg-zinc-900 border border-white/10 w-full max-w-xs sm:max-w-sm">
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
-          <h1 className="text-xl sm:text-2xl text-center">
-            Recuperar contraseña
-          </h1>
+          <h1 className="text-xl sm:text-2xl text-center">Nueva contraseña</h1>
           <p className="text-xs sm:text-sm text-zinc-400 text-center">
             Escribe tu nueva contraseña.
           </p>
@@ -59,34 +59,34 @@ function ResetPasswordPage() {
           {/* Contraseña */}
           <div className="flex flex-col gap-1">
             <label htmlFor="password" className="text-sm text-zinc-300">
-              Contraseña
+              Nueva contraseña
             </label>
             <div className="relative">
               <input
                 id="password"
-                type="password"
+                type={showPass ? "text" : "password"}
                 value={password}
                 placeholder="Nueva contraseña"
                 onChange={(e) => setPassword(e.target.value)}
                 autoComplete="new-password"
-                className="pl-4 pr-20 py-2.5 sm:py-3 text-base text-white rounded-full bg-zinc-700 w-full outline-none focus:ring-2 focus:ring-white"
+                className="px-4 py-2.5 sm:py-3 text-base text-white rounded-full bg-zinc-700 w-full outline-none focus:ring-2 focus:ring-white"
               />
             </div>
           </div>
 
           {/* Confirmación de contraseña */}
           <div className="flex flex-col gap-1">
-            <label htmlFor="password" className="text-sm text-zinc-300">
-              Nueva contraseña
+            <label htmlFor="confirmPassword" className="text-sm text-zinc-300">
+              Repite la contraseña
             </label>
             <div className="relative">
               <input
                 id="confirmPassword"
                 type={showPass ? "text" : "password"}
                 value={confirmPassword}
-                placeholder="Confirmación de contraseña"
+                placeholder="Repite la contraseña"
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                autoComplete="current-password"
+                autoComplete="new-password"
                 className="pl-4 pr-20 py-2.5 sm:py-3 text-base text-white rounded-full bg-zinc-700 w-full outline-none focus:ring-2 focus:ring-white"
               />
               <button

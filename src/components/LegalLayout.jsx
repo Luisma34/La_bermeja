@@ -8,6 +8,9 @@ import Footer from './Footer'
 function LegalLayout({ title, children }) {
   return (
     <div className="min-h-screen flex flex-col bg-cream">
+      {/* Título de la pestaña y de Google (React 19 lo sube al <head>) */}
+      <title>{`${title} · La Bermeja`}</title>
+
       <Navbar forceVisible />
 
       <main className="flex-1 pt-28 pb-20 px-6">

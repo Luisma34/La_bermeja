@@ -19,9 +19,17 @@ function Events() {
 
   useEffect(() => {
     supabase
-      .from("events") 
+      .from("events")
       .select()
-      .then(({ data }) => setEvents(data));
+      .then(({ data, error }) => {
+        // Si Supabase falla (sin conexión, proyecto pausado...), la sección
+        // se queda vacía en vez de romper toda la web.
+        if (error) {
+          console.error("Error al cargar los eventos:", error.message);
+          return;
+        }
+        setEvents(data ?? []);
+      });
   }, []);
 
   return (

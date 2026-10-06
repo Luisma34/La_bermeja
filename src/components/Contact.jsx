@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 import { MessageCircle, Send, CheckCircle } from "lucide-react";
 
 // ——— CLAVES DE EMAILJS ———
-// Se leen de .env.local (NUNCA se suben a GitHub). Ver .env.example
+// Se leen de .env.local (NUNCA se suben a GitHub). 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;

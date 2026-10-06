@@ -42,6 +42,8 @@ function ForgotPasswordPage() {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-zinc-950 text-white px-4">
+      {/* Que Google no indexe las páginas del panel (React 19 sube esta etiqueta al <head>) */}
+      <meta name="robots" content="noindex, nofollow" />
       <div className="rounded-2xl p-5 sm:p-8 bg-zinc-900 border border-white/10 w-full max-w-xs sm:max-w-sm">
         {sent ? (
           <p className="text-sm sm:text-base text-center text-zinc-300 py-3 sm:py-4">
