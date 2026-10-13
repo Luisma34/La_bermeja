@@ -32,6 +32,7 @@ import CookiesPage from "./pages/CookiesPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import AccessibilityPage from "./pages/AccessibilityPage";
+import RequireAuth from "./auth/RequireAuth";
 
 // Página principal: la landing completa con todas las secciones
 function LandingPage() {
@@ -59,7 +60,14 @@ function App() {
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/admin/reset-password" element={<ResetPasswordPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route
+          path="/admin"
+          element={
+            <RequireAuth>
+              <AdminPage />
+            </RequireAuth>
+          }
+        />
         <Route path="/politica-de-cookies" element={<CookiesPage />} />
         <Route path="/politica-de-privacidad" element={<PrivacyPage />} />
         <Route path="/terminos-y-condiciones" element={<TermsPage />} />

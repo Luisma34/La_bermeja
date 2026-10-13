@@ -20,6 +20,7 @@ function Events() {
   useEffect(() => {
     supabase
       .from("events")
+      // SELECT * FROM events.
       .select()
       .then(({ data, error }) => {
         // Si Supabase falla (sin conexión, proyecto pausado...), la sección
