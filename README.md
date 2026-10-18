@@ -37,5 +37,3 @@ Landing page diseñada y desarrollada para **La Bermeja**, enfocada en impulsar 
    cd la-bermeja
 
   
-
-
