@@ -1,4 +1,6 @@
 # La Bermeja
+
+> **Proyecto en desarrollo:**
 > **Landing Page & Plataforma de Captación de Eventos**
 
 Landing page diseñada y desarrollada para **La Bermeja**, enfocada en impulsar su presencia en eventos locales mediante un canal digital moderno, cercano e interactivo.
@@ -36,4 +38,4 @@ Landing page diseñada y desarrollada para **La Bermeja**, enfocada en impulsar 
 
   
 
-> **Proyecto en desarrollo:** Aplicacion web desarrollada para cliente mediante vibe coding, con diseño, estructura y modificaciones propias. Actualmente se encuentra en proceso de construcción.
+
