@@ -31,7 +31,7 @@ Landing page diseñada y desarrollada para **La Bermeja**, enfocada en impulsar 
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone [https://github.com/Luisma34/la-bermeja.git](https://github.com/Luisma34/la-bermeja.git)
+   git clone https://github.com/Luisma34/la-bermeja.git
    cd la-bermeja
 
   
